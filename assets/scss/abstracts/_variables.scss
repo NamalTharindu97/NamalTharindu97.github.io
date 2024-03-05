@@ -5,13 +5,13 @@
 // stylelint-disable
 $white:    #fff;
 $gray-100: #f8f9fa;
-$gray-200: #e9ecef;
+$gray-200: #eaf0fc;
 $gray-300: #dee2e6;
 $gray-400: #ced4da;
 $gray-500: #adb5bd;
 $gray-600: #6c757d;
 $gray-700: #495057;
-$gray-800: #393e46;
+$gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
@@ -28,16 +28,16 @@ $grays: map-merge((
   "900": $gray-900
 ), $grays);
 
-$blue:    #1e549f;
-$indigo:  #695aa6;
-$purple:  #6f42c1;
-$pink:    #e83e8c;
-$red:     #ec185d;
-$orange:  #ff6d02;
-$yellow:  #ffc107;
-$green:   #1bb74f;
+$blue:    #79A9F5;
+$indigo:  #C45F90;
+$purple:  #A16AE8;
+$pink:    #FC8BC0;
+$red:     #F85C70;
+$orange:  #FF8882;
+$yellow:  #FAD02C;
+$green:   #A3C14A;
 $teal:    #20c997;
-$cyan:    #17a2b8;
+$cyan:    #47D8E0;
 
 $colors: ();
 $colors: map-merge((
@@ -56,42 +56,51 @@ $colors: map-merge((
   "gray-dark":  $gray-800
 ), $colors);
 
-$primary:       $indigo;
-$secondary:     $gray-800;
+
+$primary:       $red;
+$secondary:     $gray-600;
 $success:       $green;
 $info:          $cyan;
 $warning:       $orange;
 $danger:        $red;
 $light:         $gray-100;
-$dark:          $gray-900;
+$dark:          $gray-800;
 
 $theme-colors: ();
-$theme-colors: map-merge((
-  "primary":    $indigo,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark
-), $theme-colors);
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
 
 
 // Fonts
 //
 // Font, line-height, and color for body text, headings, and more.
-@import url('https://fonts.googleapis.com/css?family=Baloo+Paaji|Open+Sans:300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i&display=swap');
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      'Open Sans', sans-serif;
+$font-family-sans-serif:      'Source Sans Pro', sans-serif;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 $font-family-base:            $font-family-sans-serif;
+$headings-font-family:        'Dosis', sans-serif;
 // stylelint-enable value-keyword-case
 
 
 
+
 // Pagination
+
 $pagination-padding-y:              .3rem;
 $pagination-padding-x:              .7rem;
 $pagination-padding-y-sm:           .15rem;
@@ -106,6 +115,7 @@ $pagination-hover-border-color:     transparent;
 
 
 // Breadcrumbs
+
 $breadcrumb-padding-y:              .55rem;
 $breadcrumb-bg:                     transparent;
 $breadcrumb-font-size:              .9rem;
@@ -116,54 +126,22 @@ $breadcrumb-link-color:             $gray-900;
 $breadcrumb-divider:                quote("·");
 
 
-// navbar
+
+// Navbar
 
 $navbar-padding-y:                  .8rem;
-$navbar-padding-x:                  1rem;
-
-$navbar-brand-img-width:            45px;
-
-$navbar-link-font-size:             .9rem;
-$navbar-link-font-weight:           bold;
-$navbar-nav-link-padding-x:         .8rem;
-
-$navbar-toggler-padding-y:          0;
-$navbar-toggler-padding-x:          0;
-$navbar-toggler-border-radius:      0;
-$navbar-toggler-height:             30px;
-$navbar-toggler-width:              35px;
-
-$toggler-icon-height:               2px;
-$toggler-icon-top-width:            30px;
-$toggler-icon-middle-width:         25px;
-$toggler-icon-bottom-width:         30px;
-$toggler-icon-spacer-y:             10px;
-
-$navbar-dark-color:                 rgba($white, .8);
-$navbar-dark-hover-color:           rgba($white, .95);
-
-$navbar-light-color:                rgba($black, .7);
-$navbar-light-hover-color:          rgba($black, .95);
-
-
-
-// inputs
-$input-bg:                              rgba($black, .01);
-$input-disabled-bg:                     $gray-200;
-
-
-// buttons
-$btn-border-radius:           .1rem;
-$btn-border-radius-lg:        .3rem;
-$btn-border-radius-sm:        .05rem;
+$navbar-nav-link-padding-x:         1.5rem;
+$navbar-light-color:                rgba($black, .8);
 
 
 
 // Progress bars
 $progress-height:                   .3rem;
 
+
 // cards
 $card-border-radius:                0;
+
 
 
 // links

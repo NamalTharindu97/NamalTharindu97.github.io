@@ -1,65 +1,68 @@
 .header {
     position: relative;
-    height: 100vh;
+    height: 80vh;
     min-height: 600px;
-    @include flex;
-    align-items: center;  
-    justify-content: center;  
-    background-image: url(../imgs/header.jpg);
+    background-image: linear-gradient(to top, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../imgs/header.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-attachment: fixed;
+    color: $white;
 
-    .overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
+    .container {
+        position: relative;
         height: 100%;
-        background-image: linear-gradient(to top, $white 0%, rgba($primary, .35) 99%, rgba($primary, .5) 100%);
     }
 
     .header-content {
-        margin-top: 20px;
-        flex-grow: 1;
-        max-width: 550px;
-        
-        .header-title {
-            
-            .up {
-                font-size: calc(30px + (60 - 30) * ((100vw - 300px) / (1300 - 300)));
-                font-weight: 500;
-                color: #444;
-                margin-bottom: 5px;
-                position: relative;
-                display: block;
-            }
-
-            .down {
-                font-size: calc(30px + (75 - 30) * ((100vw - 300px) / (1300 - 300)));
-                margin-bottom: 0;
-                position: relative;
-                display: block;
-            }
-        }
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 55%;
+        transform: translateY(-50%);
+        color: $white;
 
         .header-subtitle {
-            font-size: calc(10px + (22 - 10) * ((100vw - 300px) / (1300 - 300)));           
-            letter-spacing: calc(1px + (7 - 1) * ((100vw - 300px) / (1300 - 300)));
-            opacity: .8;
-            margin-top: -10px;
-            margin-bottom: 20px;            
+            font-weight: 200;
+            font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
         }
 
-        .btn {
-            position: relative;
-            margin-top: 20px;
-            border-radius: 20px;
-            padding: 8px 15px;
+        .header-title {
+            font-size: calc(40px + (120 - 40) * ((100vw - 300px) / (1600 - 300)));
+            font-weight: bold;
+            line-height: .7;
+            margin-bottom: 25px;
+            color: inherit;
+        }
+
+        .header-mono {
+            letter-spacing: 5px;
+            font-weight: 500;
+            font-size: calc(12px + (19 - 12) * ((100vw - 300px) / (1600 - 300)));
+            margin-bottom: 40px;
         }
     }
 
-     // header title
+
+    @include media-breakpoint-down(sm) {
+        height: 500px;
+        min-height: 500px;
+
+        .social-icons {
+            margin: auto;
+        }
+
+        .header-content {
+            padding: 20px;
+
+            .header-mono {
+                letter-spacing: 2px;
+            }
+
+        }
+    }
+
+      // header title
     &-title {
         font-size: 2.4rem;
         font-weight: bold;
@@ -80,14 +83,3 @@
         background: lighten($primary, 20%);
     }
 }
-
-@include media-breakpoint-down(md) {
-    .header {
-        background-size: cover;
-    }
-
-    .header-content {
-        padding-left: calc(100% / 5) !important;
-    }
-}
-
